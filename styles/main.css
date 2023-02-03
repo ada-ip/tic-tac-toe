@@ -1,0 +1,400 @@
+:root {
+	--fondo-1: rgb(31, 31, 47);
+	--fondo-2: rgb(76, 73, 95);
+	--hover: rgb(109, 104, 135);
+	--texto: rgb(255, 255, 255);
+	--acento-1: rgb(79, 210, 243);
+	--acento-2: rgb(216, 119, 170);
+	--acento-3: rgb(165, 169, 208);
+	--radio: 10px;
+}
+
+/************************************* Tipografia *************************************/
+
+@font-face {
+	font-family: "Francois One";
+	src: url("../fonts/Francois_One/FrancoisOne-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Fredoka One";
+	src: url("../fonts/Fredoka_One/FredokaOne-Regular.ttf");
+}
+
+html {
+	font-size: 14px;
+}
+
+@media screen and (min-width: 500px) and (min-height: 700px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+body {
+	font-family: "Francois One", sans-serif;
+	letter-spacing: 0.03rem;
+	color: var(--texto);
+	text-align: center;
+}
+
+.subrayado {
+	text-decoration: underline;
+}
+
+.celda {
+	font-size: 2.6rem;
+}
+
+@media screen and (min-width: 900px) and (min-height: 900px) {
+	.celda {
+		font-size: 3rem;
+	}
+}
+
+.celda,
+.contenedor-turno span {
+	font-family: "Fredoka One", cursive;
+	font-weight: bold;
+}
+
+.contenedor-turno {
+	font-size: 1.7rem;
+}
+
+.contenedor-info-juego,
+button {
+	text-transform: uppercase;
+}
+
+.contenedor-puntuaciones {
+	font-size: 1.1rem;
+}
+
+@media screen and (min-width: 900px) and (min-height: 900px) {
+	.contenedor-tipo-juego,
+	.contenedor-tiempo,
+	.contenedor-puntuaciones {
+		font-size: 1.2rem;
+	}
+}
+
+button {
+	font-family: "Francois One", sans-serif;
+	font-size: 1.05rem;
+	letter-spacing: 0.05rem;
+	color: var(--texto);
+}
+
+fieldset {
+	font-size: 1.4rem;
+}
+
+label {
+	font-size: 1.1rem;
+}
+
+#texto-resultado {
+	font-size: 1.3rem;
+	text-transform: uppercase;
+}
+
+.azul {
+	color: var(--acento-1);
+}
+
+.rosa {
+	color: var(--acento-2);
+}
+
+/************************************* Lay out *************************************/
+
+/************************ Principal ************************/
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	background-color: var(--fondo-1);
+}
+
+main {
+	width: 100%;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+p {
+	margin: 0;
+}
+
+.contenedor-info-juego div {
+	margin-block: 0.5rem;
+}
+
+.contenedor-tiempo {
+	width: 255px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+@media screen and (min-width: 500px) and (min-height: 700px) {
+	.contenedor-tiempo {
+		width: 315px;
+	}
+}
+
+@media screen and (min-width: 900px) and (min-height: 900px) {
+	.contenedor-tiempo {
+		width: 375px;
+	}
+}
+
+#tiempo-juego,
+#tiempo-restante {
+	display: block;
+}
+
+#tablero {
+	display: grid;
+	grid: repeat(3, 80px) / repeat(3, 80px);
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+@media screen and (min-width: 500px) and (min-height: 700px) {
+	#tablero {
+		grid: repeat(3, 100px) / repeat(3, 100px);
+	}
+}
+
+@media screen and (min-width: 900px) and (min-height: 900px) {
+	#tablero {
+		grid: repeat(3, 120px) / repeat(3, 120px);
+	}
+}
+
+.celda {
+	display: grid;
+	place-items: center;
+	background-color: var(--fondo-2);
+	border-radius: var(--radio);
+	cursor: pointer;
+	transition: transform 0.4s;
+}
+
+.celda:hover {
+	background-color: var(--hover);
+	transform: scale(1.08);
+}
+
+.no-hover:hover {
+	background-color: var(--fondo-2);
+	transform: scale(1);
+}
+
+.celda-ganadora,
+.celda-ganadora:hover {
+	background-color: var(--hover);
+	transform: scale(1.04);
+}
+
+.contenedor-puntuaciones {
+	margin-block: 0.5rem;
+	display: grid;
+	grid: 1fr / repeat(3, 80px);
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+@media screen and (min-width: 500px) and (min-height: 700px) {
+	.contenedor-puntuaciones {
+		grid: 1fr / repeat(3, 100px);
+	}
+}
+
+@media screen and (min-width: 900px) and (min-height: 900px) {
+	.contenedor-puntuaciones {
+		grid: 1fr / repeat(3, 120px);
+	}
+}
+
+.contenedor-puntuaciones p {
+	margin-block: 0.5em;
+}
+
+.contenedor-puntos {
+	border-radius: var(--radio);
+}
+
+.contenedor-puntos-jug1 {
+	background-color: var(--acento-1);
+}
+
+.contenedor-puntos-emp {
+	background-color: var(--acento-3);
+}
+
+.contenedor-puntos-jug2 {
+	background-color: var(--acento-2);
+}
+
+button {
+	padding: 1em 2em;
+	background: transparent;
+	border: 0;
+	border-radius: var(--radio);
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+
+button::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	width: 200%;
+	background: var(--acento-1);
+	background: linear-gradient(130deg, var(--acento-1) 0%, var(--acento-2) 50%, var(--acento-1) 100%);
+	z-index: -1;
+	transition: left 0.5s;
+}
+
+button:hover::before {
+	left: -100%;
+}
+
+.contenedor-botones {
+	width: 255px;
+	margin: auto;
+	position: relative;
+}
+
+@media screen and (min-width: 500px) and (min-height: 700px) {
+	.contenedor-botones {
+		width: 315px;
+	}
+}
+
+@media screen and (min-width: 900px) and (min-height: 900px) {
+	.contenedor-botones {
+		width: 375px;
+	}
+}
+
+.btn-img {
+	padding: 1em;
+	position: absolute;
+	right: 0;
+	background-color: var(--fondo-1);
+	border-radius: 0;
+}
+
+img {
+	width: 1rem;
+	position: relative;
+	top: 0.1rem;
+}
+
+/************************ Modales ************************/
+
+.contenedor-modal {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1;
+	display: grid;
+	place-items: center;
+}
+
+.modal {
+	width: 100%;
+	padding-block: 2rem;
+	margin-inline: auto;
+	background: var(--fondo-2);
+}
+
+@media screen and (min-width: 600px) {
+	.modal {
+		width: min(80%, 800px);
+		border-radius: var(--radio);
+	}
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+}
+
+fieldset {
+	width: min(85%, 600px);
+}
+
+fieldset legend {
+	margin: auto;
+}
+
+label {
+	padding-inline: 0.2em;
+	cursor: pointer;
+}
+
+.inputs-opciones-juego {
+	display: flex;
+	justify-content: space-evenly;
+	gap: 0.4rem;
+}
+
+input[type="radio"] {
+	appearance: none;
+	padding: 0.4em;
+	background-color: var(--acento-3);
+	border: 0.22em solid var(--fondo-2);
+	border-radius: 50%;
+	box-shadow: 0 0 0 1px var(--acento-3);
+	cursor: pointer;
+	position: relative;
+	top: 0.1em;
+}
+
+input[type="radio"]:checked {
+	background-color: var(--acento-2);
+	box-shadow: 0 0 0 1px var(--acento-2);
+	animation: selec-radio-rosa 0.4s forwards;
+}
+
+@keyframes selec-radio-rosa {
+	0% {
+		background-color: var(--acento-3);
+		box-shadow: 0 0 0 1px var(--acento-3);
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(0);
+	}
+
+	100% {
+		background-color: var(--acento-2);
+		box-shadow: 0 0 0 1px var(--acento-2);
+		transform: scale(1);
+	}
+}
+
+.contenedor-modal button {
+	z-index: 1;
+}
+
+#texto-resultado {
+	margin-bottom: 1em;
+}
+
+.ocultar {
+	display: none;
+}
