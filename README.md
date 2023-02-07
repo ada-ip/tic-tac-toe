@@ -9,7 +9,7 @@ A classic game of Tic Tac Toe implemented in JavaScript. This implementation of 
 
 The AI is implemented using the minimax algorithm.
 
-You can play the game [here](https://ada-ip.github.io/tic-tac-toe/)
+You can play the game <a href="https://ada-ip.github.io/tic-tac-toe/" target="_blank">here</a>
 
 ## How To Play
 
