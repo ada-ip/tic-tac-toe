@@ -2,9 +2,11 @@
 
 ## About The Project
 
+
 <p align="center">
-    <img src="images/tic-tac-toe.JPG">
-p>
+    <img src="images/tic-tac-toe.JPG" width="450px">
+</p>
+
 
 A classic game of Tic Tac Toe implemented in JavaScript. This implementation of the game includes two play modes: 9 coins max and
 6 coins max; and you can play against another player, against a randomized computer, and against the AI.
