@@ -2,14 +2,14 @@
 
 ## About The Project
 
-![Screenshot of tic tac toe game](images/tic-tac-toe.JPG)
+![Screenshot of tic tac toe game](images/tic-tac-toe.JPG){ width="100" style="display: block; margin: 0 auto" }
 
 A classic game of Tic Tac Toe implemented in JavaScript. This implementation of the game includes two play modes: 9 coins max and
 6 coins max; and you can play against another player, against a randomized computer, and against the AI.
 
 The AI is implemented using the minimax algorithm.
 
-You can play the game [here](https://ada-ip.github.io/tic-tac-toe/)
+You can play the game <a href="https://ada-ip.github.io/tic-tac-toe/" target="_blank">here</a>
 
 ## How To Play
 
